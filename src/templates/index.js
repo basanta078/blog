@@ -14,8 +14,7 @@ import { MetaData } from '../components/common/meta'
 *
 */
 const Index = ({ data, location, pageContext }) => {
-    const posts = data.allGhostPost.edges
-
+    const posts = data.allGhostPost.edges.filter(post => post.node.slug !== "data-schema")
     return (
         <>
             <MetaData location={location} />
