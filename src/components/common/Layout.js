@@ -28,6 +28,16 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             <Helmet>
                 <html lang={site.lang} />
                 <style type="text/css">{`${site.codeinjection_styles}`}</style>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6147402-11"></script>
+                <script>
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+
+                  gtag('config', 'UA-6147402-11');
+                `}
+                </script>
                 <body className={bodyClass} />
             </Helmet>
 
